@@ -1,0 +1,4 @@
+Witam!
+Dziękujemy za zakup biletu na Bal Karnavauli!
+Twoje miejsca to : {a} i {b}
+{c}, do zobaczenia na balu!
