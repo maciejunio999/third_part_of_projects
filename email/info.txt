@@ -1,0 +1,2 @@
+thats en easy email sender, so i dont think there is much to explain
+only problem is that all this eamils go to spam because email boxes are considering this emails a threat because of unknown origin
