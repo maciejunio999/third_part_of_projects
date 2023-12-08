@@ -1,0 +1,72 @@
+Task Manager Application Documentation
+
+Introduction
+
+The Task Manager Application is a simple PyQt5-based program that allows users to manage their tasks. It provides functionalities to add, list, and save tasks. The application is organized into three main components: the main window, the add task dialog, and the list tasks dialog.
+Components
+1. MainWindow (class MainWindow(QWidget))
+
+    Description: The main window of the application, containing the title label and three buttons for adding tasks, listing tasks, and saving tasks.
+
+    Attributes:
+        label_title: QLabel - Displays the title of the application.
+        button_add_task: QPushButton - Opens the AddTaskDialog when clicked.
+        button_list_tasks: QPushButton - Opens the ListTasksDialog when clicked.
+        button_save_tasks: QPushButton - Saves the tasks to a file when clicked.
+        list_tasks_dialog: ListTasksDialog - Instance of the ListTasksDialog.
+        add_task_dialog: AddTaskDialog - Instance of the AddTaskDialog.
+
+    Methods:
+        on_button_add_task_clicked(): Displays the AddTaskDialog.
+        on_button_list_tasks_clicked(): Displays the ListTasksDialog.
+        on_button_save_tasks_clicked(): Saves the tasks to a file.
+        load_tasks(): Loads tasks from a file.
+        save_tasks(): Saves tasks to a file.
+
+2. AddTaskDialog (class AddTaskDialog(QDialog))
+
+    Description: A dialog for adding tasks, containing a title label, a text input field, and an "Add" button.
+
+    Attributes:
+        label_title: QLabel - Displays the title of the dialog.
+        line_edit_task: QLineEdit - Input field for entering the task name.
+        button_add: QPushButton - Adds the task to the list when clicked.
+        list_tasks_dialog: ListTasksDialog - Reference to the ListTasksDialog.
+
+    Methods:
+        on_button_add_clicked(): Adds the task to the list and clears the input field.
+
+3. ListTasksDialog (class ListTasksDialog(QDialog))
+
+    Description: A dialog for listing tasks, containing a checkbox for showing completed tasks, a list widget for displaying tasks, and the option to remove tasks.
+
+    Attributes:
+        list_widget: QListWidget - Widget for displaying the list of tasks.
+        checkbox_show_done: QCheckBox - Checkbox for showing completed tasks.
+        show_done: bool - Flag to determine whether completed tasks should be displayed.
+
+    Methods:
+        add_task(task, is_done=False): Adds a task to the list.
+        on_button_remove_clicked(item): Removes a task from the list.
+        on_checkbox_clicked(item): Handles the checkbox click event.
+        on_checkbox_show_done_changed(state): Handles the state change of the "Show completed tasks" checkbox.
+        show_tasks(): Shows or hides tasks based on the checkbox state.
+        get_tasks(): Retrieves the list of tasks.
+
+Usage
+
+    Run the application.
+    Click "Dodaj zadanie" to add a new task using the AddTaskDialog.
+    Click "Lista zadań" to view and manage the list of tasks using the ListTasksDialog.
+    Click "Zapisz zadania" to save the tasks to a file.
+
+Note: Completed tasks can be shown or hidden using the checkbox in the ListTasksDialog.
+Dependencies
+
+    PyQt5: The application relies on the PyQt5 library for creating the graphical user interface.
+    pickle: The pickle module is used for serializing and deserializing the tasks to and from a file.
+    sys: The sys module provides access to some variables used or maintained by the Python interpreter and to functions that interact strongly with the interpreter.
+
+Conclusion
+
+The Task Manager Application provides a straightforward interface for managing tasks, allowing users to add, list, and save tasks efficiently. The use of PyQt5 ensures a user-friendly graphical interface, making task management a seamless process.
